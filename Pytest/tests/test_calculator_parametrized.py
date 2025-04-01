@@ -25,5 +25,14 @@ def test_add_2():
 def test_add_parametrized(a, b, expected):
     assert calculator.add(a, b) == expected
 
-
-
+@pytest.mark.parametrize(
+    "a, b, expected",
+    [
+        (1, 2, 2),
+        (0, 5, 0),
+        (-2, 9, 7),
+        (5, -8, -3),
+    ],
+)
+def test_add_parametrized(a, b, expected):
+    assert calculator.multiply(a, b) == expected
